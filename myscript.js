@@ -55,6 +55,35 @@ const kompozycja2 = compose(zad2_ocena, zad2_strony, zad2_liczba);
 
 
 
+const zad3 = (books) =>
+{
+    var max = books[0].title.length;
+    var max2 = max;
+    var max_tytul = books[0].title;
+    var max2_Tytul = max_tytul;
+
+    for(let i = 1; i < books.length; i++)
+    {
+        if(books[i].title.length > max)
+        {
+            max2 = max;
+            max2_Tytul = max_tytul;
+            max = books[i].title.length;
+            max_tytul = books[i].title;
+        }
+        if(books[i].title.length > max2 && books[i].title.length < max )
+        {
+            max2 = books[i].title.length;
+            max2_Tytul = books[i].title;
+        }
+    }
+
+ 
+    
+    return max2_Tytul;
+};
+
+
 //wypisujemy dla książek
 console.log(titleStartsWithTotalPages(books));
 console.log(genreIsFantasyPages(books));
@@ -64,3 +93,7 @@ console.log(kompozycja(books));
 
 console.log("Zadanie 7");
 console.log(kompozycja2(books));
+
+console.log("Zadanie 8");
+console.log(zad3(books));
+
